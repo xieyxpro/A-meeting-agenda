@@ -1,0 +1,17 @@
+test:Date.o User.o Meeting.o Storage.o AgendaService.o AgendaUI.o DateTest.cpp UserTest.cpp MeetingTest.cpp StorageTest.cpp AgendaServiceTest.cpp Main.cpp
+	g++ -o AllTest.out -std=c++11 Date.o User.o Meeting.o Storage.o AgendaService.o DateTest.cpp UserTest.cpp MeetingTest.cpp AgendaServiceTest.cpp StorageTest.cpp Main.cpp -lgtest -lpthread
+	g++ -o AgendaUI -std=c++11 Date.o User.o Meeting.o Storage.o AgendaService.o AgendaUI.o Agenda.cpp
+User.o:User.h User.cpp
+	g++ -c -std=c++11 User.cpp
+Date.o:Date.h Date.cpp
+	g++ -c -std=c++11 Date.cpp
+Meeting.o:Meeting.h Meeting.cpp
+	g++ -c -std=c++11 Meeting.cpp
+Storage.o:Storage.h Storage.cpp
+	g++ -c -std=c++11 Storage.cpp
+AgendaService.o:AgendaService.h AgendaService.cpp
+	g++ -c -std=c++11 AgendaService.cpp
+AgendaUI.o:AgendaUI.h AgendaUI.cpp
+	g++ -c -std=c++11 AgendaUI.cpp
+clean:
+	rm User.o Date.o Meeting.o Storage.o AgendaService.o AgendaUI.o
